@@ -1,7 +1,10 @@
+//Allie Marshall Section 3 IS413
+
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+//import in the json file
 import collegeBasketballTeams from './CollegeBasketballTeams.json';
 
 interface Team {
@@ -11,6 +14,7 @@ interface Team {
   state: string;
 }
 
+//function to add heading at what the site will do
 function MarchMadnessHeading() {
   return (
     <div>
@@ -20,6 +24,7 @@ function MarchMadnessHeading() {
   );
 }
 
+//componet creates team card and displays info about each team
 class TeamCard extends React.Component<{ team: Team }> {
   render() {
     const { school, name, city, state } = this.props.team;
@@ -34,6 +39,7 @@ class TeamCard extends React.Component<{ team: Team }> {
   }
 }
 
+//component displays a list of all the teams
 class TeamList extends React.Component<{ teams: Team[] }> {
   render() {
     const { teams } = this.props;
